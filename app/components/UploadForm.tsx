@@ -165,7 +165,7 @@ export default function UploadForm() {
             <p className="text-gray-600">
               {isDragActive
                 ? 'Drop the file here'
-                : 'Drag &amp; drop a file here, or click to select'}
+                : 'Drag &quot; &amp; &quot; drop a file here, or click to select'}
             </p>
             <p className="text-sm text-gray-500 mt-2">Max size: 5MB</p>
           </div>
