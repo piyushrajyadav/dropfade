@@ -65,16 +65,16 @@ export async function codeExists(code: string): Promise<boolean> {
   return exists;
 }
 
-// Helper function to mark a file as downloaded
+// Helper function to mark a file as downloaded and delete it immediately
 export async function markAsDownloaded(code: string): Promise<void> {
-  console.log('Marking file as downloaded for code:', code);
+  console.log('Marking file as downloaded and deleting for code:', code);
   const metadata = (globalThis as any).fileStore.get(code);
   if (metadata) {
-    metadata.hasDownloaded = true;
-    (globalThis as any).fileStore.set(code, metadata);
-    console.log('File marked as downloaded');
+    // For single-use files, delete immediately after marking as downloaded
+    (globalThis as any).fileStore.delete(code);
+    console.log('File deleted after download/view');
   } else {
-    console.log('No metadata found to mark as downloaded');
+    console.log('No metadata found to mark as downloaded and delete');
   }
 }
 
@@ -94,4 +94,4 @@ if (process.env.NODE_ENV === 'development') {
   setInterval(cleanupExpiredFiles, 60000);
 }
 
-export { deleteMetadata as deleteFileMetadata };
+export { deleteMetadata as deleteFileMetadata, getMetadata as getFileMetadata };
