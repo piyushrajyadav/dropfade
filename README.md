@@ -1,4 +1,4 @@
-# DropKey
+# DropKey - an open source plateform for one-time media sharing 
 
 A secure, anonymous file and text sharing web application built with Next.js, TypeScript, TailwindCSS, Cloudinary, and Redis.
 
