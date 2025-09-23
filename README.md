@@ -174,8 +174,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   
   </p>
 </div>
-- **Database**: Redis (Upstash) for metadata and TTL
-- **Deployment**: Vercel-ready
+
 
 
 ## How It Works
