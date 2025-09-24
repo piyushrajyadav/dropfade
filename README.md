@@ -2,7 +2,7 @@
 
 ![DropFade Logo](./public/logos/drop.png)
 
-**Secure, Anonymous File & Text Sharing with One-Time Access**
+**Secure, Anonymous, File & Text Sharing with One-Time Access**
 
 DropFade is a modern, privacy-focused file sharing platform that allows you to share files and text notes securely with automatic deletion after a single access. No registration required, no tracking, complete anonymity.
 
@@ -30,7 +30,7 @@ DropFade is a modern, privacy-focused file sharing platform that allows you to s
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/dropfade.git
+   git clone https://github.com/piyushrajyadav/dropfade.git
    cd dropfade
    ```
 
@@ -74,7 +74,7 @@ DropFade is a modern, privacy-focused file sharing platform that allows you to s
 - **Database**: Upstash Redis
 - **Icons**: Lucide React
 - **QR Codes**: react-qr-code
-- **Notifications**: Sonner
+
 
 ## 📖 How It Works
 
@@ -98,29 +98,7 @@ DropFade is a modern, privacy-focused file sharing platform that allows you to s
 2. Get your REST URL and token
 3. Add them to your `.env.local` file
 
-## 📂 Project Structure
 
-```
-dropfade/
-├── app/                    # Next.js app directory
-│   ├── api/               # API routes
-│   │   ├── download/      # File download endpoints
-│   │   ├── file/         # File metadata endpoints
-│   │   └── upload/       # Upload endpoints
-│   ├── access/           # Access code entry page
-│   ├── download/         # Download pages
-│   └── page.tsx          # Homepage
-├── components/            # React components
-│   ├── ui/               # Reusable UI components
-│   ├── file-upload.tsx   # File upload component
-│   ├── text-input.tsx    # Text note component
-│   └── success-modal.tsx # Success dialog
-├── lib/                  # Utility libraries
-│   ├── cloudinary.ts     # Cloudinary integration
-│   ├── redis.ts          # Redis client
-│   └── utils.ts          # Helper functions
-└── public/               # Static assets
-```
 
 ## 🔒 Security Features
 
@@ -162,7 +140,7 @@ CMD ["npm", "start"]
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+We welcome contributions!
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -176,9 +154,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🛟 Support
 
-- 📧 **Email**: support@dropfade.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/dropfade/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/dropfade/discussions)
+- 📧 **Email**: piyushyadavrajyadav.com
 
 ## 🙏 Acknowledgments
 
@@ -191,73 +167,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  <p>Built with ❤️ by the DropFade team</p>
+  <p>Built with ❤️ by the Piyush yadav </p>
   <p>
-    <a href="https://dropfade.com">Website</a> •
-    <a href="https://github.com/yourusername/dropfade">GitHub</a> •
-    <a href="https://twitter.com/dropfade">Twitter</a>
+    <a href="https://dropfade.piyushyadav.me">Website</a> •
+    <a href="https://github.com/piyushrajyadav/dropfade">GitHub</a> •
+  
   </p>
 </div>
-- **Database**: Redis (Upstash) for metadata and TTL
-- **Deployment**: Vercel-ready
 
-## Quick Start
 
-### 1. Clone and Install
-
-\`\`\`bash
-git clone <your-repo>
-cd dropkey
-npm install
-\`\`\`
-
-### 2. Environment Setup
-
-Create `.env.local` file:
-
-\`\`\`env
-# Cloudinary
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-
-# Upstash Redis
-UPSTASH_REDIS_REST_URL=your_redis_url
-UPSTASH_REDIS_REST_TOKEN=your_redis_token
-
-# App Config
-MAX_FILE_SIZE=5242880
-CODE_LENGTH=6
-\`\`\`
-
-### 3. Get Your API Keys
-
-**Cloudinary** (Free tier available):
-1. Sign up at [cloudinary.com](https://cloudinary.com)
-2. Get your Cloud Name, API Key, and API Secret from the dashboard
-
-**Upstash Redis** (Free tier available):
-1. Sign up at [upstash.com](https://upstash.com)
-2. Create a Redis database
-3. Get your REST URL and Token
-
-### 4. Run Development Server
-
-\`\`\`bash
-npm run dev
-\`\`\`
-
-Visit `http://localhost:3000`
-
-### 5. Deploy to Vercel
-
-\`\`\`bash
-npm i -g vercel
-vercel login
-vercel deploy
-\`\`\`
-
-Add your environment variables in the Vercel dashboard.
 
 ## How It Works
 

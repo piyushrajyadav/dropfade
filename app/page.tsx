@@ -13,6 +13,7 @@ import { SuccessModal } from "@/components/success-modal"
 import { Upload, MessageSquare, Zap, ArrowRight } from "lucide-react"
 import { toast } from "sonner"
 import { DebugPanel } from "@/components/debug-panel"
+import { ProductHuntBadge, ProductHuntFloatingBadge } from "@/components/product-hunt-badge"
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("file")
@@ -136,6 +137,15 @@ export default function HomePage() {
                 <span>Secure & private</span>
               </div>
             </div>
+            
+            {/* Product Hunt Badge */}
+            <div className="flex justify-center mt-8">
+              <ProductHuntBadge 
+                className="animate-pulse-slow" 
+                theme="light"
+                showAnimation={true}
+              />
+            </div>
           </div>
 
           {/* Main Card */}
@@ -256,6 +266,12 @@ export default function HomePage() {
           type={uploadResult.type}
         />
       )}
+
+      {/* Floating Product Hunt Badge - for extra visibility */}
+      <ProductHuntFloatingBadge 
+        position="top-right" 
+        theme="light" 
+      />
     </div>
   )
 }
