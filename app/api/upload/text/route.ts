@@ -21,11 +21,12 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const { text, expiry } = await request.json()
+    const { text, expiry, maxDownloads = 1 } = await request.json()
 
     console.log("Text details:", {
       length: text?.length,
       expiry,
+      maxDownloads,
     })
 
     if (!text || typeof text !== "string") {
@@ -56,6 +57,8 @@ export async function POST(request: NextRequest) {
       content: text,
       expiresAt,
       hasDownloaded: false,
+      maxDownloads,
+      downloadCount: 0,
       createdAt: Date.now(),
     }
 

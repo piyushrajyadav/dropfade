@@ -31,12 +31,14 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData()
     const file = formData.get("file") as File
     const expiry = formData.get("expiry") as string
+    const maxDownloads = Number.parseInt(formData.get("maxDownloads") as string) || 1
 
     console.log("File details:", {
       name: file?.name,
       size: file?.size,
       type: file?.type,
       expiry,
+      maxDownloads,
     })
 
     if (!file) {
@@ -74,6 +76,8 @@ export async function POST(request: NextRequest) {
       filename: file.name, // Use the original file name from the upload
       expiresAt,
       hasDownloaded: false,
+      maxDownloads,
+      downloadCount: 0,
       createdAt: Date.now(),
     }
 
