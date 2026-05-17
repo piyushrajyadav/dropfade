@@ -1,5 +1,6 @@
 "use client"
 
+import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -7,7 +8,7 @@ import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
-export default function FadedPage() {
+function FadedContent() {
   const searchParams = useSearchParams()
   const reason = searchParams.get("reason") || "default"
 
@@ -72,5 +73,17 @@ export default function FadedPage() {
         </CardContent>
       </Card>
     </div>
+  )
+}
+
+export default function FadedPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center">
+        <div className="text-[var(--muted)]">Loading...</div>
+      </div>
+    }>
+      <FadedContent />
+    </Suspense>
   )
 }
